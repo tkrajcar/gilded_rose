@@ -1,21 +1,7 @@
-require './item.rb'
+require 'item.rb'
 
 class GildedRose
-
-  @items = []
-
-  def initialize
-    @items = []
-    @items << Item.new("+5 Dexterity Vest", 10, 20)
-    @items << Item.new("Aged Brie", 2, 0)
-    @items << Item.new("Elixir of the Mongoose", 5, 7)
-    @items << Item.new("Sulfuras, Hand of Ragnaros", 0, 80)
-    @items << Item.new("Backstage passes to a TAFKAL80ETC concert", 15, 20)
-    @items << Item.new("Conjured Mana Cake", 3, 6)
-  end
-
   def update_quality
-
     for i in 0..(@items.size-1)
       if (@items[i].name != "Aged Brie" && @items[i].name != "Backstage passes to a TAFKAL80ETC concert")
         if (@items[i].quality > 0)
@@ -61,6 +47,27 @@ class GildedRose
         end
       end
     end
+  end #update_quality
+
+# Code from here down belongs to the goblin in the corner. Better not touch!
+  def initialize(items=nil)
+    @items = items || default_items
   end
 
+  attr_reader :items
+
+  def default_items
+    [
+      Item.new("+5 Dexterity Vest", 10, 20),
+      Item.new("Aged Brie", 2, 0),
+      Item.new("Elixir of the Mongoose", 5, 7),
+      Item.new("Sulfuras, Hand of Ragnaros", 0, 80),
+      Item.new("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+      Item.new("Conjured Mana Cake", 3, 6)
+    ]
+  end
+
+  def item_with_name(name)
+    items.detect { |item| item.name == name}
+  end
 end

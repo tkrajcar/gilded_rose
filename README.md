@@ -1,8 +1,9 @@
 If you want to get cracking on the ruby source then do this:
 
-    git clone git@github.com:professor/GildedRose.git
+    git clone git@github.com:tkrajcar/gilded_rose.git
 
-Hi and welcome to team Gilded Rose.
+
+# Hi and welcome to team Gilded Rose.
 
 As you know, we are a small inn with a prime location in a prominent city ran
 by a friendly innkeeper named Allison.  We also buy and sell only the finest
@@ -14,7 +15,7 @@ by a no-nonsense type named Leeroy, who has moved on to new adventures. Your
 task is to add the new feature to our system so that we can begin selling a
 new category of items.
 
-First an introduction to our system:
+## System overview
 
   - All items have a SellIn value which denotes the number of days we have to
     sell the item
@@ -23,7 +24,7 @@ First an introduction to our system:
 
   - At the end of each day our system lowers both values for every item
 
-Pretty simple, right? Well this is where it gets interesting:
+## A few more details
 
   - Once the sell by date has passed, Quality degrades twice as fast
 
@@ -41,8 +42,10 @@ Pretty simple, right? Well this is where it gets interesting:
     and by 3 when there are 5 days or less but Quality drops to 0 after the
     concert
 
-We have recently signed a supplier of conjured items. This requires an update
-to our system:
+## Your assignment
+
+We have recently signed a supplier of conjured items. This requires an update to
+our system that we'd like you to make:
 
   - "Conjured" items degrade in Quality twice as fast as normal items
 
@@ -56,5 +59,10 @@ we'll cover for you).
 Just for clarification, an item can never have its Quality increase above 50,
 however "Sulfuras" is a legendary item and as such its Quality is 80 and it
 never alters.
+
+## Tests
+We have tests, of course! Unfortunately, the goblin wrote them, and he wasn't
+happy about it, so he kind of did the minimum job possible to get the boss
+off his back. Guard and rspec are set up, at least.
 
 Source: <http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/>
